@@ -66,13 +66,21 @@ $(function() {
         it('have menu hidden by default', function () {
             const body = document.querySelector('body');
             expect(body.classList.contains('menu-hidden')).toBe(true);
-        })
+        });
 
-         /* TODO: Write a test that ensures the menu changes
-          * visibility when the menu icon is clicked. This test
-          * should have two expectations: does the menu display when
-          * clicked and does it hide when clicked again.
+         /* Test to check that menu changes visibility when the
+          * menu icon is clicked. 
           */
+        
+        it('change visibility on menu icon clicked', function() {
+            const hamburgerIcon = document.querySelector('.menu-icon-link');
+            const body = document.querySelector('body');
+
+            hamburgerIcon.click();
+            expect(body.classList.contains('menu-hidden')).toBe(false);
+            hamburgerIcon.click();
+            expect(body.classList.contains('menu-hidden')).toBe(true);
+        });     
 
     });
 
